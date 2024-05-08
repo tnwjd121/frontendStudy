@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로컬 스토리지(Local Storage)를 저장하는 함수</title>
+</head>
+<body>
+  <h1>로컬 스토리지(Local Storage)를 저장하는 함수 : </h1>
+  <pre>
+    function savetheLocal(){
+      var second = documnet.getElementByid("second");
+      var thevalue = second.value;
+      localStorage.setItem(1, thevalue);
+      gettheLocal();
+    }
+  </pre>
+</body>
+</html>
