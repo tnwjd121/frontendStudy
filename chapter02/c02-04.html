@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- c02-04.html -->
+  <!-- 
+    표를 만드는 태그 
+  -->
+  <!-- <table>, <tr>, <td>,<th> 태그 - 기본적인 표 만들기 -->
+  <table border="1">
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+    </tr>
+  </table>
+  <table border="1">
+    <tr>
+      <th>제목1</th>
+      <td>1행 2열</td>
+      <td>1행 3열</td>
+    </tr>
+    <tr>
+      <th>제목2</th>
+      <td>2행 2열</td>
+      <td>3행 3열</td>
+    </tr>
+  </table>
+  <!-- 
+    colspan, rowspan 속성 - 행 또는 열 합치기
+    colspan - 가로로 몇 개의 셀을 합칠지 지정
+    <td colspan = "합칠 셀의 개수" > 
+  -->
+  <table border="1">
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+    </tr>
+    <tr>
+      <td colspan="3">내용1</td>
+    </tr>
+  </table>
+  <!-- 
+    rowspan속성을 이용해 세로로 합칠 셀의 개수를 지정한다
+  -->
+  <table border="1">
+    <tr>
+      <td>내용1</td>
+      <td rowspan="2">내용2</td>
+      <td>내용3</td>
+    </tr>
+    <tr>
+      <td>내용1</td>
+      <td>내용3</td>
+    </tr>
+  </table>
+  <!-- 
+    <caption> 태그, <figcaption> 태그 - 표에 제목 붙이기 
+    <caption> 표 제목 </caption>
+  -->
+  <table border="1">
+    <caption>
+      <strong> 테이블 굵은 제목입니다</strong>
+      <p>테이블 소제목입니다</p>
+    </caption>
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+      <td>내용5</td>
+    </tr>
+  </table>
+  <!-- 
+    <figcaption> 태그 사용하기
+  -->
+  <figure>
+    <figcaption>
+      <p>테이블 제목</p>
+    </figcaption>
+    <table border="1">
+      <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+        <td>내용3</td>
+        <td>내용4</td>
+        <td>내용5</td>
+      </tr>
+    </table>
+  </figure>
+  <!-- 
+    aria-describedby 속성 - 표에 대한 설명 제공하기 
+    화면 낭독기에서 표를 읽어 줄 때 도움이 되도록 표 설명을 별도의 문자로 작성한 후 추가해준다
+  -->
+  <p id="summary"> 테이블에 대한 설명</p>
+  <table border="1" aria-describedby="summary">
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td>내용3</td>
+      <td>내용4</td>
+      <td>내용5</td>
+    </tr>
+  </table>
+  <!-- 
+    <thead>, <tbody>, <tfoot> 태그 - 표 구조 정의하기
+    테이블을 제목 부분, 본문 부분, 요약 부분으로 구분해서 작성
+  -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>제목1</th>
+        <th>제목2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>본문1</td>
+        <td>본문2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>요약1</td>
+        <td>요약2</td>
+      </tr>
+    </tfoot>
+  </table>
+  <!-- <col>, <colgroup> 태그 - 여러 열 묶어 스타일 지정하기 -->
+    <table border="1">
+      <colgroup>
+      <col>
+      <col style="background-color: chartreuse;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>제목1</th>
+          <th>제목2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>본문1</td>
+          <td>본문2</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>요약1</td>
+          <td>요약2</td>
+        </tr>
+      </tfoot>
+    </table>
+</body>
+</html>
