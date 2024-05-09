@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- chapger04/c04-01.html -->
+  <!-- 폼(form) 만들기 -->
+  <!-- 
+    <form>태그 - 폼 만들기 
+    <form>태크는 폼을 만드는 가장 기본적인 태그로 <form> 태그와</form> 태그 사이에 여러 폼 요소와 관련된 태그를 넣습니다
+    <form [속성 = "속성 값"]>여러 폼 요소</form>
+    - form 태그의 속성
+    몇 가지 속성을 통해 사용자가 입력한 자료들을 서버로 어떤 방식으로 넘길것인지, 서버에서 어떤 프로그램을 이용해 처리할 것인지 지정합니다
+    속성 / 설명
+    method / 속성값: get, post
+    get- 주소 표시줄에 사용자가 입력한 내용이 그대로 들어납니다. 
+    post - 사용자가 입력한 내용이 드러나지 않습니다.
+    name / 폼의 이름을 지정합니다 한 문서 안에 여러 개의 <form> 태그가 있을 경우, 폼들을 구분하기 위해 사용합니다
+    action / 처리해 줄 서버 상의 프로그램을 지정(주소)합니다
+    target / 지정한 스크립트 파일을 현재 창이 아닌 다른 위치에 열도록 지정합니다
+    
+    action = "/login" -> controller.java -> method 처리
+    autocomplete / on, off 자동 완성 기능을 켜고 끄는 속성, 기본값은 on
+  -->
+  <form method="get" autocomplete="off">
+    <input type="text" name="t1">
+    <input type="submit">
+  </form>
+  <form method="get">
+    <input type="text" name="t1">
+    <input type="submit">
+  </form>
+  <form method="post">
+    <input type="text" name="t2">
+    <input type="submit">
+  </form>
+  <!-- 
+    <label> 태그 - 폼 요소에 레이블 붙이기
+      입력 창 앞에 이름을 붙여 놓은 텍스트를 말합니다
+  -->
+  <form>
+    <label>이름
+      <input type="text">
+    </label>
+    <br>
+    <label for="i1">생년월일</label>
+    <input type="text" id="i1">
+    <input type="submit" value="회원가입">
+  </form>
+  <!-- 
+    라디오 버튼과 체크박스에서 사용하는 <label> 태그 
+    <label>태그를 이용해 라디오 버튼이나 체크박스에 텍스트를 연결해 놓았다면 텍스트만 터치해도 라디오 버튼이나 체크박스가 선택되어 사용이 훨씬 쉬워집니다
+  -->
+  <form>
+    <h3>가입 경로</h3>
+      <input type="radio" name="jointype">지인소개
+      <input type="radio" name="jointype">검색
+      <input type="radio" name="jointype">광고를 보고
+      <h3>관심분야</h3>
+      <label><input type="checkbox">웹 개발</label>
+      <label><input type="checkbox">빅데이터</label>
+      <label><input type="checkbox">AI</label>
+      
+  </form>
+  <!-- 
+    <fieldset>, <legend> 태그 - 폼 요소 그룹으로 묶기 
+    <fieldset> - 테두리 추가
+    <legend> - 제목 추가
+  -->
+  <form>
+    <fieldset>
+      <legend>이름과 생년월일 입력</legend>
+      <label>이름
+        <input type="text">
+      </label>
+      <br>
+      <label for="i1">생년월일</label>
+      <input type="text" id="i1">
+      <input type="submit" value="회원가입">
+    </fieldset>
+  </form>
+  
+</body>
+</html>

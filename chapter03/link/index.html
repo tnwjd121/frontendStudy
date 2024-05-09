@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- chapter03/link/index.html -->
+  <!-- 내 페이지 링크 걸기 -->
+  <h1>index - frontend page</h1>
+  <ul>
+    <li><a href="pages/htmlpage.html">html page</a></li>
+    <li><a href="pages/csspage.html">css page</a></li>
+    <li>javascript page</li>
+  </ul>
+  <button id="b1">html page</button>
+  <button id="b2">css page</button>
+  <div id="d1"></div>
+  <script>
+   const b1 = document.querySelector("#b1") 
+   const b2 = document.querySelector("#b2") 
+   const d1 = document.querySelector("#d1")
+    b1.addEventListener("click", function(){
+      d1.innerHTML="<h1>html page</h>"
+    })
+    b2.addEventListener("click", function(){
+      d1.innerHTML="<h1>css page</h>"
+    })
+    //SPA - single page application(한페이지 웹사이트를 구성)
+  </script>
+</body>
+</html>

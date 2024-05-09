@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- c04-02.html -->
+  <!-- 
+    사용자 입력을 위한 <input> 태그
+    텍스트, 비밀번호, 이메일 주소, 전화번호, 날짜, 시간, 이미지,
+    버튼 등 다양한 항목을 지정할 수 있습니다
+    다양한 옵션 중에서 무엇이 될지는 type 속성에 의해 결정 됩니다 
+  -->
+  <!-- 
+    <input> 태그 - 입력 항목 만들기 
+    <input type ="유형" [속성="속성 값"]>
+  -->
+  <!-- type="text" - 텍스트 필드 만들기
+    한 줄짜리 일반 텍스트를 입력하는 필드입니다
+    속성 / 설명
+    name / 텍스트를 구별할 수 있도록 이름을 붙입니다
+  --> 
+  <input type="text" name="user-id">
+  <!-- java에서는 String userId=nickname; -->
+  <!-- size / 텍스트 필드의 크기를 지정합니다 -->
+  <input type="text" name="user기id" size="10">
+  <br>
+  <!-- maxlength / 텍스트 필드에 입력할 수 있는 최대 문자 개수를 지정합니다 -->
+  <input type="text" name="user-id" maxlength="10">
+  <br>
+  <!-- value / 텍스트 필드 부분에 표시될 기본 값입니다 -->
+  <input type="text" name="user-id" value="아이디를 입력해주세요">
+
+</body>
+</html>
