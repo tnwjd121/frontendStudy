@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- chapter03/c03-01.html -->
+  <!-- 
+    이미지
+    - 웹에서 사용하는 이미지 형식
+    bmp - 비트맵 이미지, 윈도우 초기에 사용한 이미지 형식
+
+    웹 페이지에서 사용할 수 있는 이미지 파일은 파일 크기가 크지 않으면서도 화질이 좋아야 하기 때문에 몇 가지 파일 형식만 사용할 수 있습니다
+    - 웹에서 사용할 수 있는 이미지 파일 형식
+    - jpg/jpeg(join photographic experts group)
+    사진을 위해 개발된 형식으로 다양한 색상과 명암을 표현할 수 있습니다
+    - gif(graphic interchange form)
+    표시할 수 있는 색상 수가 최대 256가지뿐이지만 다른 이미지 파일형식에 비해 파일 크기가 작기 때문에 아이콘이나 불릿 등 작은 이미지에 주로 사용합니다
+    투명한 배경이나 움직이는 이미지를 만들 수 있다는 장점이 있습니다
+    움직이는 물체라고 인식할 수 있는 프레임수
+    초당 7장정도 되야 움직이는 물체라고 인식
+    fps - frame per second
+    예전 tv 일본 애니메이션은 11fps
+    디즈니 애니메이션은 30fps
+    - png(portable network graphics)
+    투명 배경을 만들어서 다양한 색상도 표현할 수 있으며
+    네트워크용으로 개발되었기 때문에 최근 많이 사용합니다
+    - 새로운 이미지 형식
+      webp, avif, tiff, svg
+  -->
+  <!-- 
+    <img> 태그 - 이미지 삽입하기
+    기본형
+    <img src = "경로" [속성="값"]>
+    - 이미지와 폰트를 사용시에는 라이선스를 꼭 확인 하셔야 됩니다
+  -->
+  <img src="ocean.jpg" alt="바다">
+
+  <!-- 
+    src속성 - 이미지 파일 경로 지정하기
+    이미지를 웹 문서에 넣으려면 src 속성에 정확한 파일 경로를 지정해야 합니다. 경로란 현재 html 문서에서 이미지 파일까지 찾아가기 위한 길로 이 길이 정확하지 않다면 웹 문서에 이미지가 표시되지 않습니다.
+
+    - 내 컴퓨터의 이미지 파일 결로 지정하기
+    - 파일 경로 두가지
+    - 절대 경로
+    - 상대 경로
+  -->
+  <!--
+    - 절대 경로
+    드라이브에서 부터 파일 확장자까지
+    일반적으로 아예 사용하지 않습니다
+    상대경로만 사용한다
+  -->
+  <img src="C:\Users\ITPS\Documents\dev\frontend\html5\chapter03\beach.jpg"  alt="바다">
+<!-- 
+  - 상대 경로
+  웹 문서 파일의 위치를 기준으로 정해집니다
+  하위 폴더 - / 폴더이름, 첫 하위폴더는 / 생략가능
+  하위의 하위 폴더 - 폴더이름/폴더이름
+  상위 폴더 - ..
+  상위의 상위 폴더 - ../..
+  현재 폴더 - . , 생략가능
+-->
+  <!-- imges폴더 생성 후 beach.jpg를 복사 이름 변경 i-beach.jpg -->
+  <img src="images/i-beach.jpg" alt="">
+  <!-- imges폴더 안에 img폴더 생성 후 beach.jpg를 복사 이름 변경 i-i-beach.jpg -->
+  <img src="images/img/i-i-beach.jpg" alt="">
+  <!-- imges폴더 안에 img폴더 안에 background 폴더 생성 후 beach.jpg를 복사 이름 변경 i-i-b-beach.jpg -->
+  <img src="images/img/background/i-i-b-beach.jpg" alt="">
+  <!-- background 폴더에 c03-01.html 복사 후 c03-01.b.html 이름 변경 -->
+</body>
+</html>
