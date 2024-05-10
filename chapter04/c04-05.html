@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- c04-05.html -->
+  <!-- 기타 다양한 폼 요소들 -->
+  <!-- <button> 태그 - 버튼 넣기 
+    <button [type="submit|reset|button"]>버튼 이름</button>
+  -->
+  <button>버튼1</button>
+  <button><img src="images/b.png" width="100"></button>
+  <!-- 
+    <output> 태그 - 계산 결과 
+    일반 텍스트와 화면에 표시되는 것은 같으나
+    웹 브라우저와 소스코드를 보는 개발자에게
+    계산의 결과 값이라는 점을 인식시킵니다
+  -->
+  <br>
+  <output>계산 결과 값</output>
+  <!-- 
+    <progress> 태그 - 진행 상태 보여주기 
+    속성 / 설명
+    value / 작업 진행 상태를 나타내며 부동 소수점으로 표현합니다
+    0보다 크거나 같고 max 값보다 작거나 같아야 합니다
+    만약 max값이 지정되지 않았다면 이 값은 1.0보다 작아야 합니다
+    max / 작업이 완료되려면 얼마나 많은 작업을 해야 하는지 부동소수점으로 표현합니다. 이 값은 0보다 커야 합니다
+  -->
+  <br>
+  <progress value="0.5"></progress>
+  <h3>평가를 본 훈련생 수 13/15명</h3>
+  <progress value="13" max="15"></progress>
+  <!-- 
+    <meter> 태그 - 값이 차지하는 크기 표시하기 
+    속성 / 설명
+    min, max / 범위의 최솟값과 최댓값을 나타냅니다. 값을 정하지 않으면 0과 1로 간주합니다
+    value / 범위 내에서 차지하는 값을 나타냅니다
+    low / 낮은 값을 지정합니다
+    high / 높은 값을 지정합니다
+    optimum / 적당한 값을 지정합니다 optimum 값이 high값보다 크다면 value 값이 클수록 좋고 optimum값이 low값보다 작다면 value 값이 작을수록 좋습니다
+    high값이나 low값이 지정되어 있으면 현재 값(value)이 높은지 낮은 비교할 수 있고 그 정도를 색상으로 표시할 수도 있다
+  -->
+  <h3>다이어트 성공 하자</h3>
+  <label>오늘 목표 대비 섭취한 칼로리 42.5%</label>
+  <meter value="0.425"></meter>
+  <br>
+  <label>오늘 목표 걷기수 2만보 목표 오늘 걸은 수 7890</label>
+  <meter value="7890" max="20000" min="0"></meter>
+  <label>표준 체중(83kg) 대비 현재 체중(100kg)</label>
+  <meter min="60" max="130" low="75" high="83" value="100"></meter>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- c04-04.html -->
+  <!-- 여러데이터 나열해 보여 주기 -->
+  <!-- 
+    <select>, <optgroup>, <option> 태그 - 드롭다운 목록 만들기
+    여러 옵션 중에서 선택하도록 하고 싶을 때 드롭다운 목록을 사용합니다
+    -->
+
+    <h3>frontend skills</h3>
+    <select>
+      <option>html</option>
+      <option>css</option>
+      <option>javascript</option>
+      <option>react</option>
+    </select>
+  <!-- 
+    <select> 태그의 속성
+    속성 / 설명
+    size / 화면에 표시될 드롭다운 메뉴의 항목 개수를 지정합니다.
+    multiple / 브라우저 화면에 여러 개의 옵션이 함께 표시되면서 여러 항목을 선택할 수 있습니다
+    ctrl + left click - 하나씩 골라서 선택
+    shift + left click - 처음 선택된 곳부터 나중에 선택된 곳까지 연속으로 선택
+  -->
+  <select size="4">
+    <option>html</option>
+    <option>css</option>
+    <option>javascript</option>
+    <option>react</option>
+  </select>
+  <select multiple>
+    <option>html</option>
+    <option>css</option>
+    <option>javascript</option>
+    <option>react</option>
+    <option>svelte</option>
+  </select>
+  <!-- 
+    <option> 태그의 속성 
+      속성 / 설명
+      value / 옵션을 선택했을 때 서버로 넘겨질 값을 지정합니다
+      selected / 화면에 표시될 때 기본으로 선택되어 있는 옵션을 지정합니다
+  -->
+  <select>
+    <option value="html">html</option>
+    <option value="css">css</option>
+    <option value="js" selected>javascript</option>
+    <option value="react">react</option>
+  </select>
+  <!-- 
+    <optgroup> 태그 - 옵션끼리 묶기 
+    드롭다운 목록에서 여러 항목들을 몇 가지 그룹으로 묶어야 할 경우, <optgroup> 태그를 사용 할 수 있습니다
+    <optgroup> 태그를 사용할 때는 label 속성을 사용해 그룹의 제목을 붙입니다
+  -->
+  <h3>web application</h3>
+  <select>
+    <optgroup label="frontend">
+      <option>html</option>
+      <option>css</option>
+      <option>javascript</option>
+      <option>react</option>
+    </optgroup>
+    <optgroup label="backend">
+      <option>java</option>
+      <option>spring</option>
+      <option>spring boot</option>
+      <option>oracle</option>
+    </optgroup>
+  </select>
+  <!-- 
+    <datalist> 태그, <option> 태그
+    텍스트 필드에 직접 값을 입력하는 것이 아니라 데이터 목록에서 제시한 값중에서 선택하도록 하는 것입니다
+  -->
+  <h3>가장 취향에 맞는 언어는?</h3>
+  <input type="text" list="d1">
+  <datalist id="d1">
+    <option>java</option>
+    <option>javascript</option>
+    <option>python</option>
+    <option>c#</option>
+  </datalist>
+  <!-- 
+    <textarea> 태그 - 여러 줄 입력하는 텍스트 영역 만들기 
+    속성 / 설명
+    name / 다른 폼 요소와 구분하기 위해 텍스트 영역의 이름을 지정합니다
+    cols / 텍스트 영역의 가로 너비를 문자 단위로 지정합니다
+    rows / 텍스트 영역의 세로 길이를 줄 단위로 지정합니다
+    지정한 숫자보다 줄 개수가 많아지면 스크롤 막대가 생깁니다
+  -->
+  <br>
+  <textarea cols="100" rows="50">내용</textarea>
+
+  </body>
+</html>
