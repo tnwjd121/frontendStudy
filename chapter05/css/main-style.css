@@ -1,0 +1,9 @@
+/* 
+  chapter05/css 폴더 생성
+  main-style.css 파일 생성 
+*/
+
+ul{
+  color: blue;
+  list-style-type: square;
+}

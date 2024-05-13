@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- chapter05/c01-01.html -->
+  <!-- 
+    CSS 기초 
+    CSS(casecading style sheets)는 html과 함께 웹 표준의 기본 개념입니다. html이 텍스트나 이미지, 표 같은 각 요소를 웹 문서에 넣어 뼈대를 만드는 것이라면 css는 텍스트 색상이나 크기, 이미지 크기나 위치, 표 색상, 배치 방법 등 웹 문서의 디자인 요소를 담당한다
+  -->
+  <!--  
+    스타일과 스타일 시트 
+    웹 문서의 내용과 상관없이 디자인만 바꿀 수 있습니다
+  -->
+  <!-- 
+    스타일 형식
+    p{text-align:center}
+    선택자{스타일 속성 : 속성 값}
+    선택자(selector) : 앞으로 만들 스타일 규칙을 어디에 적용할 것인지르 나타냅니다
+    text-align : 속성 - 텍스트 단락을 중앙 정렬하는 스타일 규칙
+  -->
+  <!-- 
+    속성 두 개를 적용
+  -->
+  <style>
+    p{color: blue; font-size: 16px;}
+    p{
+      color: blue; 
+      font-size: 16px;
+    }
+    h1{
+      color: orange;
+    }
+    /* 
+      스타일의 주석 
+      한 줄 주석과 여러 줄 주석
+    */
+    /* 한줄 주석
+     */
+    /*
+      여러 줄 주석
+      여러 줄 주석
+    */
+  </style>
+  <!-- 
+    스타일 스타일 시트
+    스타일 규칙들을 한눈에 확인하고 필요할 때마다 수정하기도 쉽도록 한 군데 묶어 놓은 것을 스타일 시트라고 합니다
+  -->
+  <!-- 
+    내부 스타일 시트
+    일반적으로는 <head>태그 내부에 스타일 시트를 위치 시킨다
+  -->
+  <!-- 
+    스타일 시트 적용 방법
+    내부 스타일 신트
+    외부 스타일 시트
+    인라인 스타일 
+  -->
+  <style></style>
+  <style></style>
+  <p>p태그</p>
+  <h1>h1태그</h1>
+</body>
+</html>

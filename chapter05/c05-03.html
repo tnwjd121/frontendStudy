@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- c05-03.html -->
+  <!-- 캐스캐이딩 스타일 시트(css) -->
+  <!-- 
+    캐스캐이팅(cascading)의 의미
+    캐스캐이딩은 위에서 아래로 흐르는 이라는 뜻입니다
+    위에서 아래로 선택자에 적용된 많은 스타일 중에 어떤 스타일을 나타낼지 결정합니다
+    1. 스타일 우선순위
+      스타일의 규칙의 중요도, 적용 범위에 따라 우선 순위가 결정되고 그 우선 순위에 따라 위에서 아래로 스타일이 적용됩니다
+    2. 스타일 상속
+      태그들의 포함 관계에 따라 부모 요소의 스타일을 자식요소로, 위에서 아래로 전달합니다
+  -->
+  <!-- 
+    스타일 우선순위
+    얼마나 중요한가 - 중요도(Importance)
+    사용자 스타일 시트의 중요 스타일 > 제작자 스타일 시트의 중요 스타일 > 제작자 스타일 시트의 일반 스타일 > 사용자 스타일 시트의 일반 스타일 > 브라우저 스타일 시트의 스타일
+  -->
+  <!-- 
+    사용자 스타일 시트의 중요 스타일
+    사용자 스타일 시트란 저시력자나 색약자 등과 같이 특별한 조건이 필요한 사용자가 그들에게 맞게 구성해 놓은 스타일 시트를 말합니다
+    시스템을 통해 스타일 시트를 지정해 놓을 수 있다
+  -->
+  <!-- 
+    제작자 스타일 시트
+    사이트를 제작하면서 만든 스타일 시트를 말합니다
+  -->
+  <!-- 
+    중요 스타일 !important
+    스타일 뒤에 !important를 붙여 주면 이것을 중요스타일이라고 합니다
+  -->
+  <!-- 
+    기본적인 브라우저 스타일 시트
+    브라우저들마다 기본적으로 지정하고 있는 스타일입니다
+  -->
+  <!--
+    소스에서의 순서
+    스타일 시트에서 중요도와 명시도가 같다면 스타일 우선 순위를 정하는 것은 소스의 순서입니다
+    나중에 지정한 스타일이 우선 적용된다
+  -->
+  <style>
+    h1{
+      color: red !important;
+    }
+    h1{
+      color: green;
+    }
+    h1{
+      color: skyblue !important;
+    }
+    a{
+      color: aqua;
+    }
+    /* 
+      명시도(specificity) - 얼마나 한정지을 수 있는가 
+      인라인 스타일 > id 스타일 > 클래스 스타일 > 태그 스타일
+    */
+    #i-h2-01{
+      color: chocolate;
+    }
+    .c-h2-01{
+      color: burlywood;
+    }
+    h2{
+      color: aqua;
+    }
+    #i-h2-02{
+      color: burlywood;
+    }
+    #i-h2-02{
+      color: burlywood !important;
+    }
+    /* 
+      우선 적용 css 순위
+      중요도>명시도>소스의 위치
+    */
+    /* 
+      스타일 상속
+      여러 태그들은 서로 포함 관계가 있다
+      포함하는 태그를 부모 요소, 포함된 태그를 자식요소라고 합니다
+      스타일 시트에서는 자식 요소에서 별도로 스타일을 지정하지 않으면 부모 요소에 있는 스타일 속성들이 자식 요소로 전달되는데 이것을 스타일 상속이라고 합니다
+    */
+    body{
+      color: hotpink;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>Lorem Ipsum</li>
+  </ul>
+  <h2><span></span></h2>
+  <h2 style="color: darkgray;" id="i-h2-02" class="c-h2-01 c-h2-02">Lorem Ipsum</h2>
+  <h2 style="color: darkgray;">Lorem Ipsum</h2>
+  <h2 id="i-h2-01">Lorem Ipsum</h2>
+  <h2 class="c-h2-01">Lorem Ipsum</h2>
+  <h2>Lorem Ipsum</h2>
+  <a href="https://www.lipsum.com/">lorem ipsum</a>
+  <h1>What is Lorem Ipsum?</h1>
+</body>
+</html>
