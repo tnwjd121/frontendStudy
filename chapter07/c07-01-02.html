@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /* 
+    background-size 속성 - 배경 이미지 크기 조절하기
+    속성 값 / 설명
+    auto / 원래 배경 이미지 크기만큼 표시됩니다
+    contain / 요소 안에 배경 이미지가 다 들어오도록 이미지 확대/축소합니다
+    cover / 배경 이미지로 요소를 무도 덮도록 이미지를 확대/축소합니다
+    <크기 값> / 너비 값과 높이 값을 지정합니다.
+    너비 값만 지정할 경우, 원래 배경 이미지 크기를 기준으로 축소/확대 비율을 자동으로 계산해 높이 값을 지정합니다
+    <백분율> / 배경 이미지가 들어갈 요소의 크기를 기준으로 백분율 값을 지정하고 그 크기에도 맞도록 배경 이미지를 확대하거나 축소합니다
+  */
+  .cd1{
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    background-image: url(img/20191229153530528.jpg);
+    background-repeat: no-repeat;
+  }
+  /* 
+    auto 
+    원래 배경 이미지 크기 그대로 표시됩니다
+  */
+  #d1{
+    background-size: auto;
+  }
+  /* <크기 값> */
+  #d2{
+    background-size: 400px 200px;
+    background-size: 400px;
+  }
+  /* 
+    <백분율>
+
+  */
+  #d3{
+    background-size: 50%;
+  }
+  /* 
+    contain
+    요소 안에 모든 배경 이미지가 표시되도록 확대하거나 축소합니다
+  */
+  #d4{
+    background-size: contain;
+  }
+  /* 
+    cover
+    요소 전체를 모두 덮도록 배경 이미지를 확대하거나 축소합니다 
+  */
+  #d5{
+    background-size: cover;
+  }
+  </style>
+</head>
+<body>
+  <div id="d5" class="cd1"></div>
+  <div id="d4" class="cd1"></div>
+  <div id="d3" class="cd1"></div>
+  <div id="d2" class="cd1"></div>
+  <div id="d1" class="cd1"></div>
+</body>
+</html>

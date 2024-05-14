@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /* chapter07/c07-01.html */
+  /* 색상과 배경을 위한 스타일*/
+  /* 배경 색과 배경 이미지 */
+  /* 
+    background-color 속성 - 배경 색 지정하기 
+  */
+  body{
+    background-color: #f5f0b3;
+  }
+  /* <div></div>아무런 효과는 없지만 블록 형태로 감싸주는 태그 */
+  #d1{
+    border: 1px solid black;
+  }
+  /* 
+    배경 색 스타일 상속
+    예외적으로 backgroud-color값은 상속되지 않습니다. 기본적으로 모든 웹 문서 요소의 배경이 투명하기 때문에 부모의 색으로 지정한 문서 배경이 그대로 비치는 것일 뿐입니다.
+  */
+  #d1{
+    background-color: rgba(170, 247, 160);
+  }
+  /* 
+    backgroud-clip 속성 - 배경 적용 범위 조절하기 
+    속성 값 / 설명
+    border-box / 박스 모델의 가장 외곽인 테두리(border)까지 적용합니다
+    padding-box / 박스 모델에서 테두리를 뺀 패딩(padding)범위까지 적용합니다
+    content-box / 박스 모델에서 내용 부분만 적용합니다
+  */
+  /* 
+    너비를 300px
+    테두리를 3px짜리 점선
+    패딩을 35px
+  */
+  .dc1{
+    width: 300px;
+    border: 3px dotted rgb(136, 199, 106);
+    padding: 30px;
+    background-color: rgb(90, 183, 167);
+  }
+  /* 
+    border-box
+    테두리 부분까지 배경 색이 채워집니다 - 기본값
+  */
+  /* 
+    padding-box
+    패딩 부분까지 배경이 채워집니다
+  */
+  #d3{
+    background-clip: padding-box;
+  }
+  /* 
+  content-box
+  콘텐츠 부분만 배경이 채워집니다
+  */
+  #d4{
+    background-clip: content-box;
+  }
+
+
+  </style>
+</head>
+<body>
+  <div id="d4" class="dc1">
+    <p>
+      border-box / 박스 모델의 가장 외곽인 테두리(border)까지 적용합니다
+      padding-box / 박스 모델에서 테두리를 뺀 패딩(padding)범위까지 적용합니다
+      content-box / 박스 모델에서 내용 부분만 적용합니다
+    </p>
+  </div>
+  <div id="d3" class="dc1">
+    <p>
+      border-box / 박스 모델의 가장 외곽인 테두리(border)까지 적용합니다
+      padding-box / 박스 모델에서 테두리를 뺀 패딩(padding)범위까지 적용합니다
+      content-box / 박스 모델에서 내용 부분만 적용합니다
+    </p>
+  </div>
+  <div id="d2" class="dc1">
+    <p>
+      border-box / 박스 모델의 가장 외곽인 테두리(border)까지 적용합니다
+      padding-box / 박스 모델에서 테두리를 뺀 패딩(padding)범위까지 적용합니다
+      content-box / 박스 모델에서 내용 부분만 적용합니다
+    </p>
+  </div>
+  <div id="d1">
+    <h1>Frontend Skills</h1>
+      <p>HTML</p>
+      <p>CSS</p>
+      <p>Javascript</p>
+  </div>
+</body>
+</html>

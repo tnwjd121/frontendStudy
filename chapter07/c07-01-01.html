@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  
+  /* 
+    background-image 속성 - 웹 요소에 배경 이미지 넣기
+    기본형
+    background-image:url(파일 경로)
+  */
+  body{
+    background-image: url(img/bg-img.jpg);
+  }
+  /* 
+  background-repeat 속성 - 배경 이미지 반복 방법 지정하기 
+  배경이미지의 크기가 배경을 채우려는 요소보다 작을 경우, 기본적으로 반복해 표시됩니다.
+  속성 값 / 설명
+  repeat / 브라우저 화면에 가득 찰 때까지 배경 이미지를 가로와 세로로 반복합니다*
+  repeat-x / 브라우저 창 너비와 같아질 때까지 배경 이미지를 가로로 반복합니다
+  repeat-y / 브라우저 창 높이와 같아질 때까지 배경 이미지를 세로로 반복합니다
+  no-repeat / 배경 이미지를 한 번만 표시하고 반복하지 않습니다
+  */
+  body{
+    background-image: url(img/20200101173014369.jpg);
+    background-repeat: no-repeat;
+  }
+  </style>
+</head>
+<body>
+  <div id="d1" class="cd1"></div>
+</body>
+</html>
