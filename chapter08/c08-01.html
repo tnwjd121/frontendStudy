@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* chapter08/c08-01.html */
+    /* 레이아웃을 위한 스타일 */
+    /* css와 박스 모델 */
+    /* 블록 레벨 요소와 인라인 레벨 요소
+      블록 레벨 요소 - 태그를 사용해 요소를 삽입했을 때 혼자 한 줄을 차지하는 요소입니다.
+      가로크기가 100%
+      대표적인 태그 - <div>, <h1>, <p>
+      인라인 레벨 요소 - 줄을 차지하지 않는 요소입니다. 크기는 내용만큼
+      대표적인 태그 - <span>, <img>
+    */
+    #d1{
+      height: 300px;
+      border: 1px solid black;
+    }
+    /* 박스 모델(box model) - 박스 형태의 콘텐츠
+      네모난 박스 형태로 자리를 차지하는 것을 박스 모델이라고 합니다.
+      콘텐츠 영역 - 시작 태그와 끝 태그 사이의 실제 내용 부분
+      패딩(padding) - 테두리와 콘텐츠 영역 사이의 여백
+      테두리(border) - 콘텐츠와 패딩의 둘레의 선
+      마진(margin) - 여러 박스 모델 사이의 여백
+    */
+    /* 
+      width, height 속성 - 콘텐츠 영역의 크기
+      속성 값 / 설명
+      <크기> / 너비와 높이 값을 px(픽셀)이나 cm(센티미터) 같은 단위와 함께 수치로 지정합니다
+      <백분율> / 박스 모델을 포함하는 부모 요소를 기준으로 너비나 높이 값을 백분율(%)로 지정합니다
+      auto / 박스 모델의 너비와 높이 값이 콘텐츠 양에 따라 자동으로 결정됩니다 *
+    */
+    #d3{
+      width: 300px;
+      height: 100px;
+      background: #ffa4e8;
+    }
+    #d2{
+      width: 80%;
+      height: 100px;
+      background: #ffa2d1;
+    }
+    /* 실제 콘텐츠 크기 계산하기 
+      박스 모델의 전체 너비 = width값 + 좌우 패딩 + 좌우 테두리
+    */
+    /* display속성 - 화면 배치 방법 결정하기
+      블록 레벨 요소를 인라인 레벨 요소로 바꾸거나 인라인 레벨 요소를 블록 레벨 요소로 바꿀 수 있습니다
+      세로로 표시되는 목록을 가로 내이게이션으로 바꿀 때, 한 줄로 표시되는 이미지에 여백과 테두리를 추가해 갤러리로 표시할 때 이 방법을 사용합니다
+    */
+    /* block 속성 값
+      해당 요소를 블록 레벨로 지정합니다
+    */
+    .i1{
+      display: block;
+    }
+    /* inline 속성 값
+      블록 레벨 요소를 인라인 레벨로 바꿀 수 있습니다
+    */
+    #u1{
+      list-style-type: none;
+    }
+    #u1 li{
+      display: inline;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: #a5ffa2;
+      margin: 0px;
+      color:white;
+    }
+    /* inline-block 속성 값 
+      inline으로 지정하면 한 줄로 배치할 수 있지만 너비나 높이, 마진 같은 박스 모델 값이 정확히 적용되지 않습니다
+		*/
+    #u2{
+      list-style-type: none;
+      margin: 0px;
+    }
+    #u2 li{
+      /* display: inline-block; */
+      float:left;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: #33c52e;
+      margin: 0px;
+      border:0px
+    }
+    /* 테두리 관련 속성들 */
+    /* border-style 속성 - 테두리 스타일 지정하기
+      속성 값 / 설명
+      none / 테두리가 나타나지 않습니다 *
+      hidden / 테두리가 나타나지 않습니다 border-collapse일 경우, 다른 테두리도 표시되지 않습니다
+      dashed / 테두리를 짧은 선(선으로 된 점선)으로 표시합니다
+      dotted / 테두리를 점선으로 표시합니다
+      double / 테두리를 이중선으로 표시합니다. 두선 사이의 간격은 border-width값으로 지정합니다
+      groove / 테두리를 창에 조각한 거처럼 표시합니다. 홈이 파인 듯 입체적으로 보입니다
+      inset / border-collapse:separate일 경우, 전체 박스 테두리가 창에 박혀 있는 것철머 표시되고 border-collapse:collapse일 경우, groove와 똑같이 표시됩니다
+      outset / border-collapse:separate일 경우, 전체 박스 테두리가 창에서 튀어나온 것처럼 표시되고 border-collapse:collapse일 경우, ridge와 똑같이 표시됩니다
+      ridge / 테두리를 창에서 튀어나온 것처럼 표시합니다
+      solid / 테두리를 실선으로 표시합니다
+    */
+    .cd1{
+      width: 300px;
+      height: 200px;
+      border-width: 5px;
+    }
+    #d5{
+      border-style: solid;
+    }
+    #d6{
+      border-style: dashed;
+    }
+    #d7{
+      border-style: dotted;
+      border-style: groove;
+      border-style: double;
+    }
+    /* border-width 속성 - 테두리 두께 지정하기
+      기본형
+      border-top|right|bottom|left-width:
+      boder-width:<크기>|thin|medium|thick
+    */
+    #d5{
+      border-top-width: 10px;
+    }
+    #d8{
+      margin: 30px;
+      border-style: solid;
+      border-width: 10px;
+      border-width: 5px 10px;
+      border-width: 5px 10px 15px 20px;
+    }
+    /* 
+    border-width 값을 1개 준 경우 :4변 다 적용된다
+    border-width 값 2개 : 위아래와 좌우를 묶어 적용
+    border-width 값 4개 : top 부터 시계방향, top-right-bottom-left
+    */
+    /* border-color 속성 - 테두리 색상 지정하기
+      border-top|right|bottom|left-color:
+      border-color:<색상>
+    */
+    #d9{
+      border-style: solid;
+      border-width: 0.5px;
+      border-color: gainsboro;
+    }
+    /* border 속성 - 테두리 스타일 묶어 지정하기
+      기본형
+      border-top|right|bottom|left
+      border:<두께>|<색상>|<스타일>
+      순서는 상관없습니다
+    */
+    #d10{
+      border:0.5px solid gainsboro
+    }
+    /* border-radius 속성 - 박스 모서리 둥글게 만들기
+      기본형
+      border-top-left-radius
+      border-top-right-radius
+      border-bottom-right-radius
+      border-bottom-left-radius
+      border-radius:<크기>|<백분율>
+    속성 값 / 설명
+    <크기> / 둥글게 처리할 반지름 크기를 px이나 em같은 단위와 함께 수치로 표시합니다
+    <백분율> / 현재 요소의 크기를 기준으로 둥글게 처리할 반지름 크기를 %로 지정합니다
+    */
+    #d11{
+      border:5px solid black;
+      border-bottom-left-radius: 20px;
+    }
+    #d12{
+      border:5px solid black;
+      border-radius: 20px;
+      margin: 10px;
+    }
+    #d13{
+      border:0.5px solid gainsboro;
+      border-radius: 10px;
+      margin: 10px;
+      width: 250px;
+      height: 150px;
+      background-image: url(img/images.jpg);
+    }
+    /* 타원 형태로 둥글게 만들기
+      가로 반지름 크기와 세로 반지름 크기를 함께 지정하게 되면 타원 형태가 됩니다
+    */
+    #d14{
+      border:5px solid black;
+      margin: 10px;
+      border-top-left-radius: 20px 50px;
+    }
+    /* box-shadow 속성 - 선택한 요소에 그림자 효과 내기
+    기본형
+      box-shadow : none |<그림자 값>
+      <그림자 값>=<수평거리><수직거리><흐림정도><번짐정도><색상>
+    */
+    #d15{
+      border:0.5px solid gainsboro;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 4px 2px gainsboro;
+      box-shadow: -2px 2px 4px 2px gainsboro;
+    }
+  </style>
+</head>
+<body>
+  <div id="d15" class="cd1"></div>
+  <div id="d14" class="cd1"></div>
+  <div id="d13"></div>
+  <div id="d12" class="cd1"></div>
+  <div id="d11" class="cd1"></div>
+  <div id="d10" class="cd1"></div>
+  <div id="d9" class="cd1"></div>
+  <div id="d8" class="cd1"></div>
+  <div id="d5" class="cd1"></div>
+  <div id="d6" class="cd1"></div>
+  <div id="d7" class="cd1"></div>
+  <div>
+    <ul id="u2">
+      <li><a href="https://nid.naver.com/nidlogin.login?url=https%3A%2F%2Fmail.naver.com%2F">메일</a></li>
+      <li>카페</li>
+      <li>블로그</li>
+      <li>쇼핑</li>
+      <li>뉴스</li>
+    </ul>
+    <ul id="u1">
+      <li><a href="https://nid.naver.com/nidlogin.login?url=https%3A%2F%2Fmail.naver.com%2F">메일</a></li>
+      <li>카페</li>
+      <li>블로그</li>
+      <li>쇼핑</li>
+      <li>뉴스</li>
+    </ul>
+  </div>
+  <img class="i1" src="https://placehold.co/180x100">
+  <img class="i1" src="https://placehold.co/180x100">
+  <img class="i1" src="https://placehold.co/180x100">
+
+  <div id="d4">
+    <div id="d5"></div>
+    <div id="d6"></div>
+  </div>
+  <div id="d3"></div>
+  <div id="d2"></div>
+  <img src="img/box-model.png">
+  <img src="img/html9-1.png">
+  <img src="https://placehold.co/180x100">
+  <img src="https://placehold.co/180x100">
+  <img src="https://placehold.co/180x100">
+  <h1>제목 태그</h1>
+  <p>단락 태그</p>
+  <div id="d1"></div>
+</body>
+</html>

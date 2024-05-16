@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* c07-02.html */
+    /* 그러데이션 효과로 배경 꾸미기 */
+    /* 선형 그러데이션
+      색상이 수직이나 수평 또는 대각선 방향으로 일정하게 변하는 것을 말합니다.
+      기본형
+      linear-gradient(<각도>to<방향>,color-stop,[color-stop,...])
+      - 방향
+      속성 값 / 설명
+      to top / 아래에서 시작해 위로 그러데이션이 만들어집니다
+      to left / 오른쪽에서 왼쪽으로
+      to right / 왼쪽에서 시작해 오른쪽으로
+      to bottom / 위에서 시작해 아래로 
+    */
+    #d1{
+      background: linear-gradient(to right, #e4cfff, #9843ff);
+      height: 300px;
+    }
+    #d2{
+      background: linear-gradient(to right bottom, #e4cfff, #9843ff);
+      height: 300px;
+    }
+    /* 각도
+      각도 deg로 표시합니다
+      각도는 맨 위부분이 0deg이고 시계 방향으로 회전하면서 90deg, 180deg가 됩니다
+    */
+    #d3{
+      background: linear-gradient(225deg, #f2e8ff, #8b2cff);
+      height: 300px;
+    }
+    /* 색상 중지 점(color-stop)
+      색이 바뀌는 지점을 색상 중지점이라고 합니다.
+      색상만 지정할 수도 있습니다. 색상 수에 따라 같은 크기를 분배합니다
+      색상과 함께 중지 점의 위치도 함께 지정할수도 있습니다
+      색상을 지정할 때 rgba표기법을 이용해 투명도를 함께 사용한 색상도 사용할 수 있습니다
+    */
+    #d4{
+      background: linear-gradient(to bottom, red, orange,yellow,green,blue);
+      height: 300px;
+    }
+    #d5{
+      background: linear-gradient(to bottom, red, orange 10%,yellow);
+      height: 300px;
+    }
+    /* 원형 그러데이션
+      radial-gradient
+    */
+  </style>
+</head>
+<body>
+  <div id="d5"></div>
+  <div id="d4"></div>
+  <div id="d3"></div>
+  <div id="d2"></div>
+  <div id="d1"></div>
+</body>
+</html>

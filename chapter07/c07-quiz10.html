@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배경 이미지</title>
+  <style>
+    #d1{
+      border: 10px solid gray;
+      height: 300px;
+      background-image: url(img/bg3.jpg);
+      background-repeat: no-repeat;
+      background-origin: padding-box;
+      padding: 30px;
+    }
+    #d2{
+      border: 10px solid gray;
+      height: 300px;
+      background-image: url(img/bg3.jpg);
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      padding: 30px;
+    }
+    #d3{
+      border: 10px solid gray;
+      height: 300px;
+      background-image: url(img/bg3.jpg);
+      background-repeat: no-repeat;
+      padding: 30px;
+      background-origin: content-box
+    }
+  </style>
+</head>
+<body>
+  <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
+</body>
+</html>
