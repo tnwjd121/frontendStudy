@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3단 레이아웃</title>
+  <style>
+    div{
+      border: 1px solid #ccc;
+    }
+    #container{
+      width: 960px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+    #header{
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    #contents{
+      width: 610px;
+      float: left;
+      margin-bottom: 20px;
+    }
+    #left-sidebar{
+      width: 150px;
+      float: left;
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+    #right-sidebar{
+      width: 150px;
+      float: right;
+      margin-bottom: 20px;
+    }
+    #footer{
+      clear: both;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>사이트 제목</h1>
+    </div>
+    <div id="left-sidebar">
+      <h2>사이드바</h2>
+      <ul>
+        <li>제안된 헌법개정안은 대통령이 20일 이상의 기간 이를 공고하여야 한다.</li>
+      </ul>
+    </div>
+    <div id="contents">
+      <h2>본문</h2>
+      <p>국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다. 헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다.</p>
+      <p>국가유공자·상이군경 및 전몰군경의 유가족은 법률이 정하는 바에 의하여 우선적으로 근로의 기회를 부여받는다. 대통령의 임기는 5년으로 하며, 중임할 수 없다. 이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 제1항의 탄핵소추는 국회재적의원 3분의 1 이상의 발의가 있어야 하며, 그 의결은 국회재적의원 과반수의 찬성이 있어야 한다. 다만, 대통령에 대한 탄핵소추는 국회재적의원 과반수의 발의와 국회재적의원 3분의 2 이상의 찬성이 있어야 한다.</p>
+    </div>
+    <div id="right-sidebar">
+      <h2>사이드바</h2>
+      <ul>
+        <li>제안된 헌법개정안은 대통령이 20일 이상의 기간 이를 공고하여야 한다.</li>
+      </ul>
+    </div>
+    <div id="footer">
+      <h2>푸터</h2>
+      <p>대법원장과 대법관이 아닌 법관은 대법관회의의 동의를 얻어 대법원장이 임명한다.</p>
+    </div>
+  </div>
+</body>
+</html>
