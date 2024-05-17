@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 포지셔닝</title>
+  <style>
+    #box1{
+      width: 160px;
+      height: 80px;
+      background-color: yellow;
+      float: left;
+      z-index: 1;
+      position: absolute;
+    }
+    #box2{
+      width: 340px;
+      height: 80px;
+      background-color: aqua;
+      float: left;
+      z-index: 2;
+      position: absolute;
+      left: 130px;
+      top: 50px;
+    }
+    .font{
+      font-size: x-large;
+      line-height: 80px;
+      padding: 0px  20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="topbox">
+    <div class="font" id="box1">박스1</div>
+    <div class="font" id="box2">박스2</div>
+  </div>
+</body>
+</html>

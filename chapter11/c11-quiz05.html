@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>표 스타일</title>
+  <style>
+    #t1{
+      font-size: small;
+      width: 200px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    #t1 tr, #t1 td{
+      border: 1px solid black;
+      height: 30px;
+    }
+    #t2{
+
+      font-size: small;
+      width: 200px;
+      text-align: center;
+    }
+    #t2 tr, #t2 td{
+      border: 1px solid black;
+      height: 30px;
+      empty-cells: hide;
+    }
+  </style>
+</head>
+<body>
+  <table id="t1">
+    <caption>프로축구 경기 일정</caption>
+    <tr>
+      <td>울산</td>
+      <td>울산 vs 인천</td>
+      <td>TV 중계</td>
+    </tr>
+    <tr>
+      <td>부산</td>
+      <td>부산 vs 대전</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>서울</td>
+      <td>서울 vs 강원</td>
+      <td></td>
+    </tr>
+  </table>
+  <table id="t2">
+    <caption>프로축구 경기 일정</caption>
+    <tr>
+      <td>울산</td>
+      <td>울산 vs 인천</td>
+      <td>TV 중계</td>
+    </tr>
+    <tr>
+      <td>부산</td>
+      <td>부산 vs 대전</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>서울</td>
+      <td>서울 vs 강원</td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

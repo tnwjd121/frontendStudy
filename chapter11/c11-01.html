@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* chapter11/c11-01.html */
+    /* 다양한 css3 선택자 */
+    /* 
+      연결 선택자
+      선택자와 선택자를 연결해 적용 대상을 한정시키는 '연결 선택자'입니다
+      연결 선택자는 컴비네이션 선택자, 컴비네이션 셀렉터라고도 합니다
+    */
+    /* 
+      하위 선택자 - 지정한 모든 하위 요소에 스타일 적용하기
+      하위 선택자는 부모요소에 포함된 하위 요소 모두에 스타일이 적용되는 것으로 자손선택자라고도 합니다
+      기본형
+      section p{color:blue;}
+      자식 요소뿐만 아니라 손자 요소, 손자의 손자요소등 모든 하위요소까지 적용된다
+    */
+    .s1 p{
+      color: aqua;
+    }
+    /* 
+      자식 선택자 - 자식 요소에만 스타이 적용하기 
+      자식 선택자는 자식요소에 스타일을 적용하는 선택자로 두 요소 사이에 >(부등호)를 표시합니다
+      기본형
+      section > p {collor:blue;}
+    */
+    .s1 > p{
+      color: aquamarine;
+    }
+    .s1 > h1{
+      color: beige;
+    }
+  </style>
+</head>
+<body>
+  <section class="s1">
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <div><p>p3-p1</p></div>
+  </section>
+  <section>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+  </section>
+</body>
+</html>

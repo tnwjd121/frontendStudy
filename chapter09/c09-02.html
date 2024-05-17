@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* c09-02.html */
+    /* 표 스타일 */
+    /* 
+      capition-side 속성 - 표 제목 위치 정하기
+      속성 값 / 설명
+      top / 캡션을 표의 윗부분에 표시합니다 *
+      bottom / 캡션을 표의 아랫부분에 표시합니다
+    */
+    /*
+      border 속성 - 표 테두리 스타일 결정하기
+    */
+    .t1{
+      /* border: 1px solid black; */
+      /* border-collapse: collapse; */
+      border-collapse: separate;
+      border-spacing: 0px;
+    }
+    .t1 td{
+      border: 1px solid black;
+      padding: 10px;
+      empty-cells: hide;
+    }
+    /* 
+    border-collapse 속성 - 테두리 통합, 분리하기
+    속성 값 / 설명
+    separate / 테두리를 따로 표시합니다 *
+    collapse / 테두리를 하나로 합쳐 표시합니다
+    */
+    /* 
+      border-spacing 속성 - 인정한 셀 테두리사이 거리 지정하기 
+      border-collapse:separate를 사용해 셀 들을 분리했을 경우, 인접한 셀 테두리 사이의 거기를 지정합니다
+    */
+    /* 
+      empty-cells 속성 - 빈 셀의 표시 여부 지정하기
+      속성 값 / 설명
+      show / 빈 셀을 표시합니다 *
+      hide / 빈 셀에 테두리를 그리지 않고 비워둡니다 
+    */
+    /* 
+      width, height 속성 - 표 너비와 높이 지정하기
+      표의 너비를 지정하고 셀의 너비를 지정하지 않는다면 내용이 없을 경우의 표의 너비를 셀의 개수로 나누어 셀의 너비를 일정하게 지정하고 내용이 있다면 내용에 따라 동일한 비율로 지정합니다
+    */
+    .t2{
+      border-collapse: collapse;
+      border: 1px solid black;
+      width: 300px;
+
+    }
+    .t2 td{
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: top;
+      height: 30px;
+    }
+    /* 
+      text-align 속성 - 셀 안에서 수평 정렬하기 
+      기본형
+      text-align:left|right|center
+    */
+    /* 
+      vertical-align 속성 - 셀 안에서 수직 정렬하기 
+      기본형
+      vertical-align:top|bottom|middle
+    */
+  </style>
+</head>
+<body>
+  <table class="t2">
+    <tr>
+      <td>내용</td>
+      <td>내용내용</td>
+      <td>내용내용</td>
+    </tr>
+    <tr>
+      <td>내용</td>
+      <td>내용내용</td>
+      <td>내용내용</td>
+    </tr>
+  </table>
+  <table class="t1">
+    <tr>
+      <td>내용1</td>
+      <td>내용2</td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

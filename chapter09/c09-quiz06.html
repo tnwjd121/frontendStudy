@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS포지셔닝</title>
+  <style>
+    #main{
+      position: relative;
+      width: 800px;
+      height: 800px;
+      border: 1px solid gray;
+    }
+    .box{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: rgb(71, 71, 229);
+    }
+    #box1{
+      left: 0;
+      top: 0;
+    }
+    #box2{
+      left: 0;
+      bottom: 0;
+    }
+    #box3{
+      right: 0;
+      top: 0;
+    }
+    #box4{
+      right: 0;
+      bottom: 0;
+    }
+    #box5{
+      left: 200px;
+      top: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+  </div>
+</body>
+</html>

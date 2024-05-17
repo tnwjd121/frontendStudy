@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table CSS</title>
+  <style>
+    table{
+      border: 1px solid gray;
+      width: 300px;
+    }
+    tr, td{
+      border: 1px solid gray;
+      height: 80px;
+      text-align: center;
+      padding: 20px 0;
+    }
+    #t1{
+      vertical-align: top;
+    }
+    #t2{
+      vertical-align: bottom;
+    }
+    #t3{
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>vertical-alignment</caption>
+    <tr>
+      <td id="t1">alignment</td>
+      <td id="t2">alignment</td>
+      <td id="t3">alignment</td>
+    </tr>
+  </table>
+</body>
+</html>

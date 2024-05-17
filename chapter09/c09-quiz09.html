@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index 속성</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      font-size: x-large;
+      border: 1px solid black;
+    }
+    #b1{
+      background-color: red;
+      z-index: 1;
+    }
+    #b2{
+      background-color: yellow;
+      z-index: 3;
+      left: 60px;
+      top: 30px;
+    }
+    #b3{
+      background-color: blue;
+      z-index: 2;
+      top: 80px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="b1">1</div>
+  <div id="b2">2</div>
+  <div id="b3">3</div>
+</body>
+</html>
