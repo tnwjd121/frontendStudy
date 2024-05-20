@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* c11-03.html */
+    /* 가상 클래스와 가상 요소 */
+    /* 
+      사용자가 동작에 반응하는 가상 클래스 사용자가 웹 요소를 클릭하거나 마우스 커서를 올려 놓는 등 특정 동작을 할 때 스타일이 바뀌도록 만들고 싶다면 가상클래스 선택자를 사용합니다
+    */
+    /*
+    :link 가상 클래스 선택자 - 방문하지 않은 링크에 스타일 적용
+    */
+    a:link{
+      color: dimgray;
+    }
+    /* 
+      visited 가상 클래스 선택자 - 방문한 링크에 스타일 적용 
+      문서의 링크 중에서 한번 이상 방문한 링크에 대한 스타일을 적용합니다
+    */
+    a:visited{
+      color: darkgray;
+    }
+    a{
+      text-decoration: none;
+    }
+    /* 
+      :hover 가상 클래스 선택자 - 웹 요소에 마우스 커서를 올려 놓을 때의 스타일 적용
+    */
+    a:hover{
+      color: black;
+    }
+    /* :active 가상 클래스 선택자 - 웹 요소에 마우스를 누르고 있을 때 스타일 적용 */
+    a:active{
+      color: gainsboro;
+    }
+    /* 
+      : focus 가상 클래스 선택자 - 웹 요소에 초점이 맞추어졌을 때의 스타일 적용
+    */
+    input:focus{
+      background-color: darkgray;
+    }
+    /* 
+      구조 가상 클래스
+      구조 가상 클래스란 말 그대로 웹 문서 구조를 기준으로 특정 위치에 있는 요소를 찾아 스타일을 지정할 때 사용하는 가상 클래스 선택자입니다 
+    */
+    /* 
+      root 가상 클래스 선택자 - 문서 전체에 적용하기
+      전체적으로 문서 안에 똑같이 적용할 스타일이 있을 경우 body{}사용을 했지만 똑같은 의미로 :root 선택자도 사용한다
+    */
+    :root{
+      font-size: 20px;
+    }
+    /* 
+      :nth-chile(n)와 : nth-last-child(n)
+      가상 클래스 선택자 - 자식 요소의 위치에 따라 스타일 적용하기 
+    */
+    /* 테이블 행의 홀수 번째 자식요소에 스타일 적용 */
+    table td{
+      border: 1px solid black;
+    }
+    table tr:nth-child(2n+1){
+      background-color: darkgray;
+    }
+    /* 테이블 행의 짝수 번째 자식요소에 스타일 적용 */
+    table tr:nth-child(2n){
+      background-color: dimgray;
+    }
+    /* 
+      홀수: odd, 2n+1
+      짝수: even, 2n 
+    */
+    /* 
+      :first-child, :last-child 가상 클래스 선택자 - 첫 번째, 마지막 요소에 스타일 적용하기 
+    */
+    table td:first-child{
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    table td:last-child{
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>열 column1</td>
+      <td>열 column2</td>
+      <td>열 column3</td>
+    </tr>
+  </table>
+  <table>
+    <tr><td>행 row 1</td></tr>
+    <tr><td>행 row 1</td></tr>
+    <tr><td>행 row 1</td></tr>
+    <tr><td>행 row 1</td></tr>
+    <tr><td>행 row 1</td></tr>
+    <tr><td>행 row 1</td></tr>
+  </table>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+
+  <h1><a href="https://g-sa.koreaisacademy.com/">코리아 IT 아카데미</a></h1>
+  <h1><a href="https://g-sa.koreaisacademy.com/ncs/gookbi.asp">코리아 IT 아카데미</a></h1>
+</body>
+</html>

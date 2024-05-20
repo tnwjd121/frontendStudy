@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자</title>
+  <style>
+    li{
+      list-style-type: none;
+      float: left;
+      margin: 20px;
+      color: blue;
+    }
+    a{
+      text-decoration: none;
+    }
+    a[class~="button"]{
+      padding: 5px 20px;
+      border-radius: 0px;
+      box-shadow: 5px 5px gray;
+      border: 2px solid black;
+    }
+    .b2{
+      color: white;
+      background-color: blue;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#" class="button">메뉴3</a></li>
+      <li><a href="#" class="button b2">메뉴4</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
