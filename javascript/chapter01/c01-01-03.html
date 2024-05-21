@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #first{
+      border: 1px solid black;
+      margin: 5px;
+    }
+    #second{
+      border: 1px solid black;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+  <div id="a"></div>
+  <div id="b"></div>
+
+  <img class="rect">
+  <img class="rect">
+  <img class="rect">
+  <img class="rect">
+  <!-- <img class="rect" src="https://placehold.co/600x400"> -->
+  <h1 class="h1-main">Hello World!</h1>
+
+  <!-- div 태그 25개 -->
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+  <div class="gradation"></div>
+
+  <div class="d01c"></div>
+
+  <div id="first">
+    <h1>첫 번째 div 태그 내부</h1>
+  </div>
+  <div id="second">
+    <h1>두 번째 div 태그 내부</h1>
+  </div>
+
+  <h1 id="rH1">제거 대상 문서 객체</h1>
+  <script>
+    // c01-01-03.html
+    /* 
+    글자 (내용) 조작하기 (다루기)
+    속성 이름 / 설명
+    문서 객체.textContent / 입력된 문자열을 그대로 넣습니다
+    문서 객체.innerHtml / 입력된 문자열 HTML형식으로 넣습니다
+    */
+    const a = document.querySelector("#a")
+    const b = document.querySelector("#b")
+    a.textContent = "<h1>textContent 속성 </h1>"
+    b.innerHTML = "<h1>innerHtml 속성 </h1>"
+
+    /* 
+      javascript 예전 코드
+      innerText 속성 - textContent 속성과 비슷한 속성입니다. innerText 속성의 성능 문제로 textContent 속성이 추가된 것으로 글자를 다룰대는 성능이 좋은 최신의 textContent 속성을 사용하는 것이 좋습니다
+    */
+    /* 
+      속성 조작하기
+      메소드 이름 / 설명
+      문서객체.setAttribute(속성이름,값)
+      속성에 값을 지정합니다
+      문서객체.getAttribute(속성이름) / 특정 속성을 추출합니다
+    */
+    const rects = document.querySelectorAll(".rect")
+    rects.forEach((rect, index)=>{
+      const width = (index+1)*100
+      const src = `https://placehold.co/${width}x300`
+      // 속성 추가
+      // rect.setAttribute("src", src)
+      rect.src=src
+    })
+    /* 
+      속성 추가 간단히 사용하기 
+      setAttribute() getAttribute()메소드를 사용하지 않고도 다음과 같이 온점을 찍고 속성을 바로 읽어 들이거나 지정 할 수 있습니다
+    */
+    /* 
+      스타일 조작하기
+      style 속성은 객체이며, 내부에는 속성으로 css를 사용해서 지정할 수 있는 스타일들이 있습니다.
+      이러한 속성에는 css로 입력할 때 사용하는 값과 같은 값을 입력합니다
+      css 속성 이름 / javascript style 속성 이름
+      background-color / backgroundColor
+      text-align / textAlign
+      font-size / fontSize
+      3가지 방법으로 스타일을 조정할 수 있습니다
+      첫번째 방법을 가장 많이 사용합니다
+      1. 문서객체.style.backgroundColor
+      2. 문서객체.style["backgroundColor"]
+      3. 문서객체.style["background-color"]
+    */
+
+    const h1Main = document.querySelector(".h1-main")
+    h1Main.style.color = "rgb(100,100,100)"
+
+    const gradations = document.querySelectorAll(".gradation")
+    console.log(gradations)
+    gradations.forEach((gradation,index)=>{
+      const val = index*10
+      gradation.style.height="10px"
+      gradation.style.backgroundColor=`rgb(${val},${val},${val})`
+    })
+    //for문
+    // for(let i=0; i<gradations.length;i++){
+    //   const val = i*10
+    //   gradations[i].style.height="10px"
+    //   gradations[i].style.backgroundColor=`rgb(${val},${val},${val})`
+    // }
+
+    /* 
+      문서 객체 생성하기 
+      문서 객체를 생성하고 싶을 때에는 document.createElement()메소드를 사용합니다.
+      기본형
+      document.createElement(문서 객체 이름)
+      appendChild() 메소드 - 어떤 부모 객체 아래에 자식 객체를 추가할 수 있습니다
+      기본형
+      부모객체.appendChild(자식 객체)
+    */
+
+    // 변수나 상수 선언부
+    // 부모 객체 가져오기
+    const d01c = document.querySelector(".d01c")
+
+    //h1 문서 객체 생성
+    const h101=document.createElement("h1")
+    h101.textContent='문서 객체 동적으로 생성하기'
+    h101.style.color="white"
+    h101.style.backgroundColor="black"
+    // h1 객채를 부모 객체에 추가하기
+    d01c.appendChild(h101)
+
+    /* 
+      문서 객체 이동하기
+      appendChild()메소드로 문서 객체를 이동할때도 사용할 수 있습니다
+      문서 객체를 다른 문서 객체에 추가하면 문서 객체가 이동합니다
+    */
+    const divA = document.querySelector('#first')
+    const divB = document.querySelector('#second')
+    const h1 = document.createElement("h1")
+
+    h1.textContent = "이동하는 h1 태그"
+
+    const toFirst = () => {
+      divA.appendChild(h1)
+      setTimeout(toSecond,1000)
+    }
+    const toSecond = () => {
+      divB.appendChild(h1)
+      setTimeout(toFirst,1000)
+    }
+    toFirst()
+    /* 
+      문서 객체 제거하기 
+      기본형
+      부모 객체.removeChild(자식객체)
+    */
+    const rH1 = document.querySelector("#rH1")
+    setTimeout(() => {
+      // document.body.removeChild(rH1)
+      rH1.parentNode.removeChild(rH1)
+    }, 1000);
+
+    /* 
+      자신의 부모 객체 선택하는 속성
+      parentNode
+
+      문서객체.parentNode.removeChild(문서객체)
+    */
+  </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradoemt Menu</title>
+</head>
+<body>
+  <div class="main"></div>
+</body>
+  <script>
+    const main = document.querySelector(".main")
+    const ul = document.createElement("ul")
+    main.appendChild(ul)
+
+    const li1 = document.createElement("li")
+    li1.textContent = "Home"
+    ul.appendChild(li1)
+    const li2 = document.createElement("li")
+    li2.textContent = "HTML4"
+    ul.appendChild(li2)
+    const li3 = document.createElement("li")
+    li3.textContent = "CSS3"
+    ul.appendChild(li3)
+    const li4 = document.createElement("li")
+    li4.textContent = "JQuery"
+    ul.appendChild(li4)
+
+    li1.style.listStyleType = "none"
+    li2.style.listStyleType = "none"
+    li3.style.listStyleType = "none"
+    li4.style.listStyleType = "none"
+    li1.style.float ="left"
+    li2.style.float ="left"
+    li3.style.float ="left"
+    li4.style.float ="left"
+    li1.style.border = "1px solid black"
+    li2.style.border = "1px solid black"
+    li3.style.border = "1px solid black"
+    li4.style.border = "1px solid black"
+    li1.style.padding ="10px"
+    li2.style.padding ="10px"
+    li3.style.padding ="10px"
+    li4.style.padding ="10px"
+    li1.style.borderTopLeftRadius = "10px"
+    li1.style.borderBottomLeftRadius = "10px"
+    li4.style.borderTopRightRadius = "10px"
+    li4.style.borderBottomRightRadius = "10px"
+
+  </script>
+</html>

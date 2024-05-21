@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="div"></div>
+</body>
+<script>
+  const div = document.querySelector(".div")
+  const h1 = document.createElement("h1")
+  h1.textContent = "예약 방법 및 요금"
+  div.appendChild(h1)
+
+  const ul1 = document.createElement("ul")
+  const li1 = document.createElement("li")
+  const li2 = document.createElement("li")
+  li1.textContent = "직접 통화"
+  li2.textContent = "문자 남기기"
+  ul1.appendChild(li1)
+  ul1.appendChild(li2)
+  div.appendChild(ul1)
+
+  const ul2 = document.createElement("ul")
+  const li3 = document.createElement("li")
+  const li4 = document.createElement("li")
+  const li5 = document.createElement("li")
+  const li6 = document.createElement("li")
+  li3.textContent = "1인 : 40,000원"
+  li4.textContent = "2인 : 60,000원"
+  li5.textContent = "3인 : 80,000원"
+  li6.textContent = "4인 : 100,000원"
+  ul2.appendChild(li3)
+  ul2.appendChild(li4)
+  ul2.appendChild(li5)
+  ul2.appendChild(li6)
+  div.appendChild(ul2)
+
+  ul1.style.color ="blue"
+  ul2.style.color ="blue"
+
+
+</script>
+</html>

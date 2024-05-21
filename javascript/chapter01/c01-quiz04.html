@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>369게임</title>
+  <style>
+    .num{
+      float: left
+    }
+    button{
+      float: left;
+      margin: 18px;
+    }
+    .result{
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>369 게임</h1>
+  <p class="num">현재 숫자 : 0</p>
+  <!-- 3의 배수면 짝, 아니면 0 -->
+  <button class="button">click</button>
+  <p class="result">결과 값 : 0</p>
+</body>
+<script>
+  const num = document.querySelector(".num")
+  const result = document.querySelector(".result")
+  const button = document.querySelector(".button")
+  let count = 0;
+  button.addEventListener("click",()=>{
+    count++
+    num.textContent = `현재 숫자 : ${count}`
+    let ten = Math.floor(count/10); 
+    // 소수점 이하 버림
+    let one = count%10;
+    let resultCount = 0
+    if(ten==3||ten==6||ten==9){
+      resultCount++;
+    }
+    if(one==3||one==6||one==9){
+      resultCount++;
+    }
+    if(resultCount==0){
+      result.textContent="결과 값 : 0"
+    }else if(resultCount==1){
+      result.textContent="결과 값 : 🙏🏻"
+    }else if(resultCount==2){
+      result.textContent="결과 값 : 🙏🏻🙏🏻"
+    }
+  })
+</script>
+</html>

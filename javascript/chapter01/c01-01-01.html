@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // c01-01-01.html
+    // 2. DomContentLoaded 이벤트는 웹 브라우저가 문서 객체를 모두 읽고 나서 실행하는 이벤트입니다. 이 이벤트 안에서 javascript를 작성한다.
+    // 이벤트 - (사건)  모든 변화가 일어나는 것이다.
+    // 코드 디벨롭 패턴 (code develop pattern)
+    // 유지 보수성과 확장성이 좋아야 좋은 코드입니다
+    // 응집력을 높이고 결합도를 낮춘다
+    // 외국에 소프트웨어 공학 교수님들이 23가지 패턴을 만들었다
+    // design pattern
+    // 문서가 모두 로드된 이벤트가 발생 했을때 코드를 실행 하겠다 - 옵저버 패턴
+    /* 
+      addEventListener()
+      첫 번째 인자 - 이벤트 이름
+      두 번째 인자 - 콜백 함수
+    */
+    document.addEventListener('DomContentLoaded', ()=>{
+      const h103=document.querySelector("#h103")
+      h103.textContent ="Hello Node.js!"
+    })
+  </script>
+</head>
+<body>
+  <h1 id="h103"> hello world!</h1>
+  <img src="src/img/parttern.img">
+</body>
+</html>

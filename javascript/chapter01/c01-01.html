@@ -19,6 +19,8 @@
   <script>
     // body 태그가 생성되기 이전에 head 태그 안의 script 태그에서 body 태그를 조작하던 부분 h103은 생성되기 이전입니다.
     // 기본적으로는 head 태그 내부에 script 태그를 배치하면 body 태그에 있는 문서 객체에 접근할 수 없습니다. 모든 요소가 먼저 로드되는 body 가장 아랫부분에 script 태그를 사용한다.
+    // 1. 모든 요소가 먼저 로드되는 body가장 아랫부분에 script 태그를 사용한다.
+    // 2. DomContentLoaded 이벤트는 웹 브라우저가 문서 객체를 모두 읽고 나서 실행하는 이벤트입니다. 이 이벤트 안에서 javascript를 작성한다.
     const h103=document.querySelector("#h103")
     h103.textContent ="Hello Node.js!"
   </script>

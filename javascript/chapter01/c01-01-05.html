@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1{
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="h101">클릭 횟수: 0</h1>
+
+  <h1 id="h102">클릭 횟수: 0</h1>
+  <button id="connect">이벤트 연결</button>
+  <button id="disconnect">이벤트 제거</button>
+  <p id="status">이벤트 연결 상태: 해제</p>
+</body>
+<script>
+  // c01-01-05.html
+  /* 이벤트 설정하기 
+    기본형
+    문서객체.addEventListner(이벤트 이름, 콜백함수)
+    이벤트가 발생할 때 실행할 함수를 이벤트 리스너, 이벤트 핸들러라고 부릅니다
+  */
+  const h101 = document.querySelector("#h101")
+  let counter = 0
+  h101.addEventListener("click",()=>{
+    counter++
+    h101.textContent = `클릭 횟수: ${counter}`
+  })
+  /* 
+    이벤트 연결 제거하기
+    기본형
+    문서 객체.removeEventListener(이벤트 이름, 이벤트 리스너)
+  */
+  const h102 = document.querySelector("#h102")
+  const status = document.querySelector("#status")
+  const cButton = document.querySelector("#connect")
+  const dButton = document.querySelector("#disconnect")
+  let ctr = 0;
+
+  const listener = () => {
+    h102.textContent = `클릭 횟수: ${ctr++}`
+
+  }
+  // 이벤트 연결
+  cButton.addEventListener("click",()=>{
+    h102.addEventListener("click", listener)
+    status.textContent = "이벤트 연결 상태: 연결"
+  })
+
+  // 이벤트 해제
+  dButton.addEventListener("click",()=>{
+    h102.removeEventListener("click", listener)
+    status.textContent = "이벤트 연결 상태: 해제"
+  })
+
+</script>
+</html>
