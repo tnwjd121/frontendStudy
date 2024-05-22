@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">inch<br>
+  <button>계산</button>
+  <p></p>
+</body>
+<script>
+  // c02-01-05.html
+  /* 
+    글자 입력 양식 이벤트 
+    입력 양식을 기반으로 inch를 
+    cm단위로 변환하는 프로그램
+  */
+  const input = document.querySelector("input")
+  const button = document.querySelector("button")
+  const p = document.querySelector("p")
+
+  button.addEventListener("click",()=>{
+    const inch = Number(input.value)
+    // 숫자가 아니라면 도움 메시지를 출력합니다
+    if(isNaN(inch)){
+      p.textContent = "숫자를 입력해주세요"
+      return
+    }
+    const cm = inch*2.54
+    p.textContent = `${cm}cm`
+  })
+</script>
+</html>

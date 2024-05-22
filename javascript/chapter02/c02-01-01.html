@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+  <textarea></textarea>
+</body>
+<script>
+  //c02-01-01.html
+  /* 
+    키보드 이벤트
+    이벤트 / 설명
+    keydown / 키가 눌릴 때 실행됩니다. 키보드를 꾹 누르고 있을 때도, 입력 될 때도 실행됩니다.
+    keyup / 키보드에서 키가 떨어 질 때 실행됩니다.
+    keypress / 키가 입력되었을 때 실행됩니다.
+    웹 브라우저에 따라서 아시아권의 문자(한국어, 중국어, 일본어)를 제대로 처리하지 못하는 문제가 있었습니다.
+  */
+  /* 남은 글자 수 출력하기 */
+  const textarea = document.querySelector("textarea")
+  const h1 = document.querySelector("h1")
+
+  textarea.addEventListener("keyup", ()=>{
+    const length = textarea.value.length
+    h1.textContent=`글자 수:${length}`
+  })
+</script>
+</html>

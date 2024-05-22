@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>🎃</h1>
+</body>
+<script>
+  // c02-01-03.html
+  //win+. => 이모지 입력창
+  // wasd로 움직이게 만들기
+  const h1 = document.querySelector("h1")
+  h1.style.position = "absolute"
+
+  // 별을 이동하는 함수
+  let [x,y] = [0,0]
+  const move=()=>{
+    h1.style.top=`${x*10}px`
+    h1.style.left=`${y*10}px`
+  }
+  // 초기 위치를 잡기 위해
+  document.body.addEventListener("keydown", (e)=>{
+    switch (e.keyCode) {
+      case 87:
+      // 위쪽으로 움직이기
+      x-=1;
+      break;
+
+      case 83:
+      // 아래쪽으로 움직이기
+      x+=1
+      break;
+      
+      case 65:
+      // 왼쪽으로 움직이기
+      y-=1
+      break;
+      
+      case 68:
+      // 오른쪽으로 움직이기
+      y+=1
+      break;
+    }
+    move()
+  })
+  // W-87, s-83, a-65, d-68
+</script>
+</html>

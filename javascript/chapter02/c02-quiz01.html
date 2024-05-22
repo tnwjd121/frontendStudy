@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #main{
+      width: 440px;
+      height: 30px;
+      background-color: rgb(250, 247, 247);
+      border: 1px solid rgb(193, 193, 193);
+      margin-bottom: 20px;
+    }
+    .left{
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      float: left;
+    }
+    #left{
+      height: 35px;
+      border: 1px solid rgb(193, 193, 193);
+    }
+    #lengthL{
+      height: 30PX;
+      border: 1px solid rgb(193, 193, 193);
+      background-color: rgb(250, 247, 247);
+      
+    }
+    .point{
+      float: left;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      font-size: x-large;
+      margin: 0;
+      color: gray;
+    }
+    .right{
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      float: left;
+    }
+    #right{
+      height: 35px;
+      border: 1px solid rgb(193, 193, 193);
+    }
+    #lengthR{
+      height: 30PX;
+      border: 1px solid rgb(193, 193, 193);
+      background-color: rgb(250, 247, 247);
+      margin-bottom: 20px;
+
+    }
+    .review{
+      clear: both;
+    }
+    span{
+      color: white;
+      background-color: orange;
+      border-radius: 5px;
+      font-size: small;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="select-main">
+    <select name="main" id="main">
+      <option value="length">길이</option>
+      <option value="dataTransferSpeed">데이터 전송 속도</option>
+      <option value="dataSize">데이터 크기</option>
+      <option value="area">면적</option>
+      <option value="volume">부피</option>
+      <option value="speed">속도</option>
+      <option value="hour">시간</option>
+      <option value="enter">압력</option>
+      <option value="energy">에너지</option>
+      <option value="fuelEffciency">연비</option>
+      <option value="temperature">온도</option>
+      <option value="frequency">주파수</option>
+      <option value="mass">질량</option>
+      <option value="planeAngle">평면각</option>
+    </select>
+  </div>
+
+  <div class="left">
+    <input type="text" id="left">
+    <select name="length" id="lengthL">
+    <option value="km">킬로미터</option>
+    <option value="m">미터</option>
+    <option value="cm">센티미터</option>
+    <option value="mm">밀리미터</option>
+    <option value="micm">마이크로미터</option>
+    <option value="nm">나노미터</option>
+    <option value="mile">마일미터</option>
+    <option value="yard">야드미터</option>
+    <option value="feet">피트미터</option>
+    <option value="inch">인치미터</option>
+    <option value="harry">해리미터</option>
+    </select>
+  </div>
+  <p class="point">=</p>
+
+  <div class="right">
+    <input type="text" id="right">
+    <select name="length" id="lengthR">
+    <option value="km">킬로미터</option>
+    <option value="m">미터</option>
+    <option value="cm">센티미터</option>
+    <option value="mm">밀리미터</option>
+    <option value="micm">마이크로미터</option>
+    <option value="nm">나노미터</option>
+    <option value="mile">마일미터</option>
+    <option value="yard">야드미터</option>
+    <option value="feet">피트미터</option>
+    <option value="inch">인치미터</option>
+    <option value="harry">해리미터</option>
+    </select>
+  </div>
+  <p class="review"></p>
+</body>
+<script>
+  const main = document.querySelector("#main")
+  const left = document.querySelector('#lengthL')
+  const right = document.querySelector('#lengthR')
+  const leftText = document.querySelector("#left")
+  const rightText = document.querySelector("#right")
+  const review = document.querySelector(".review")
+
+  
+  left.addEventListener("change",()=>{
+    const leftselect = left.value
+    switch (leftselect) {
+      case "m":
+        rightText.value = parseFloat(leftText.value)/1000
+        review.innerHTML = "<span>공식</span>길이 값을 1000을(를) 나눕니다"
+      break;
+      case "cm":
+        rightText.value = parseFloat(leftText.value)/100000
+        review.innerHTML = "<span>공식</span>길이 값을 100000을(를) 나눕니다"
+      break;
+      default:
+        break;
+    }
+  })
+  
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+</body>
+<script>
+  // c02-01-02.html
+  /* 
+    키보드 키 코드 사용하기 
+    이벤트 속성 이름 / 설명
+    code / 입력한 키
+    keyCode / 입력한 키를 나타내는 숫자
+    altKey / alt키를 눌렀는지
+    ctrlKey / ctrl키를 눌렀는지
+    shiftKey / shift키를 눌렀는지
+  */
+  const h1 = document.querySelector("h1")
+  document.addEventListener("keydown",(event)=>{
+    // console.log(event.altKey)
+    // console.log(event.ctrlKey)
+    // console.log(event.shiftKey)
+    // console.log(event.code)
+    // console.log(event.keyCode)
+    let output = ""
+    output+=`alt:${event.altKey}<br>`
+    output+=`ctrl:${event.ctrlKey}<br>`
+    output+=`shift:${event.shiftKey}<br>`
+    output+=`code:${event.code}<br>`
+    // console.log(output)
+    h1.innerHTML = output
+  })
+</script>
+</html>

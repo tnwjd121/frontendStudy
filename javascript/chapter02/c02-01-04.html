@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const listener = function(evnet){
+      // const length = event.currentTarget.value.length
+      const length = this.value.length
+      // h1.textContent=`글자 수 : ${length}`
+    }
+    document.addEventListener("DOMContentLoaded", ()=>{
+      const textarea = document.querySelector("textarea")
+      const h1 = document.querySelector("h1")
+      textarea.addEventListener("keyup", listener)
+  })
+  </script>
+</head>
+<body>
+  <textarea></textarea>
+  <h1></h1>
+</body>
+<script>
+  //c02-01-04.html
+  /* 
+    이벤트 발생 객체
+    이벤트 발생시킨 객체에 접근하는 방법
+    1. evnet.currentTarget 속성을 사용
+      화살표 함수, 익명 함수 형태 모두 사용이 가능
+    2. this 키워드를 사용
+      익명 함수에서  사용이 가능
+  */
+
+
+</script>
+</html>

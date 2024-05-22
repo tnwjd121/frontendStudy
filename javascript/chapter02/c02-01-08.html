@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <select multiple>
+    <option>떡볶이</option>
+    <option>순대</option>
+    <option>오뎅</option>
+    <option>튀김</option>
+  </select>
+  <p></p>
+</body>
+<script>
+  //c02-01-08.html
+  //multiple select 태그
+
+  const select = document.querySelector("select")
+  const p = document.querySelector("p")
+  select.addEventListener("change", (event)=>{
+    const options =event.currentTarget.options
+    const list = []
+    for(const option of options){
+      if(option.selected){
+          list.push(option.textContent)
+      }
+    }
+    p.textContent=`내가 가장 좋아하는 분식 조합:${list.join(", ")}`
+  })
+</script>
+</html>
