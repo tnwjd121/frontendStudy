@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 0 auto;
+    }
+    h1{
+      margin: 0 auto;
+    }
+    #same{
+      width: 300px;
+      height: 30px;
+      margin: 0px
+    }
+    input[type="radio"]{
+      appearance:none;
+      width: 150px;
+      height: 0px;
+    }
+    #gender label {
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div id="join">
+    <h1>회원가입</h1>
+    <label >
+      <input id="same" type="text" id="id" placeholder="아이디                                             @naver.com">  
+    </label>
+    <label >
+      <input id="same" type="password" id="password" placeholder="비밀번호">
+    </label>
+    <label >
+      <input id="same" type="email" id="email" placeholder="이메일">
+    </label>
+    <label >
+      <input id="same" type="text" id="name" placeholder="이름">
+    </label>
+    <label >
+      <input id="same" type="text" id="birth" placeholder="생년월일 8자리">
+    </label>
+    <div class="gender">
+      <label>
+        <input type="radio" id="man" name="gender">
+        남자
+      </label>
+      <label>
+        <input type="radio" id="woman" name="gender">
+        여자
+      </label>
+    </div>
+    <p>대한민국+82</p>
+    <label >
+      <input id="same" type="text" id="phone" placeholder="휴대전화번호">
+    </label>
+    <button onclick="saveData()">인증요청</button>
+  </div>
+</body>
+  <script>
+    function saveData() {
+      let genderValue;
+      if(document.getElementById("man").checked){
+        genderValue = "man"
+      } else if(document.getElementById("woman").checked){
+        genderValue = "woman"
+      }
+      let userData = {
+        id: document.getElementById("id").value,
+        password: document.getElementById("password").value,
+        email: document.getElementById("email").value,
+        name: document.getElementById("name").value,
+        birth: document.getElementById("birth").value,
+        gender: genderValue,
+        phone: document.getElementById("phone").value
+      }
+      console.log(userData)
+    }
+  </script>
+</html>
