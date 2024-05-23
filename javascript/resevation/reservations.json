@@ -1,0 +1,65 @@
+[
+  {
+    "theater": "경성대",
+    "movieName": "쿵푸팬더4",
+    "headCount": "5",
+    "age": "성인",
+    "movieTime": "17:54",
+    "price": 60000,
+    "id": 1
+  },
+  {
+    "theater": "서면",
+    "movieName": "퓨리오사",
+    "headCount": "2",
+    "age": "청소년",
+    "movieTime": "17:29",
+    "price": 20000,
+    "id": 2
+  },
+  {
+    "theater": "대구",
+    "movieName": "흑성탈출",
+    "headCount": "1",
+    "age": "청소년",
+    "movieTime": "10:10",
+    "price": 10000,
+    "id": 3
+  },
+  {
+    "theater": "남포",
+    "movieName": "설계자",
+    "headCount": "1",
+    "age": "성인",
+    "movieTime": "07:20",
+    "price": 12000,
+    "id": 4
+  },
+  {
+    "theater": "경성대",
+    "movieName": "그녀가 죽었다",
+    "headCount": "6",
+    "age": "성인",
+    "movieTime": "22:15",
+    "price": 72000,
+    "id": 5
+  },
+  {
+    "theater": "강남",
+    "movieName": "범죄도시4",
+    "headCount": "3",
+    "age": "청소년",
+    "movieTime": "19:20",
+    "price": 30000,
+    "id": 6
+  },
+  {
+    "theater": "해운대",
+    "movieName": "범죄도시4",
+    "headCount": "2",
+    "age": "성인",
+    "movieTime": "18:20",
+    "price": 24000,
+    "id": 7
+  }
+]

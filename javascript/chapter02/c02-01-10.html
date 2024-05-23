@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="checkbox">
+  <span>타이머 활성화</span>
+  <h1></h1>
+</body>
+  <script>
+    //c02-01-10.html
+    /* 
+      체크 박스 활용하기
+      체크 박스처럼 체크 상태를 확인 할 때는 입력 양식의 checked 속성을 사용합니다
+      체크 상태일 때만 타이머를 증가시키는 프로그램 작성
+    */
+    const checkbox = document.querySelector("input")
+    const h1 = document.querySelector("h1")
+    let timerId = 0
+    let timer = 0
+    checkbox.addEventListener("change", (event)=>{
+      if(event.currentTarget.checked){
+        // 체크가 되어 있는 상태
+        timerId=setInterval(()=>{
+          timer+=1
+          h1.textContent = `${timer}초`
+        },1000)
+      }else{
+        //체크가 해제된 상태
+        clearInterval(timerId)
+      }
+    })
+  </script>
+</html>

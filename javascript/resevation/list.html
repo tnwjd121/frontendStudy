@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(238, 243, 229);
+    }
+    div{
+      background-color: white;
+      margin: auto;
+      width: 800px;
+      border-radius: 20px;
+      height: 800px;
+    }
+    h1{
+      margin: 0 auto;
+      width: 300px;
+      padding: 30px;
+      text-align: center;
+      
+    }
+    table, tr, td, th {
+      border: 1px solid rgb(172, 189, 156);
+      border-collapse: collapse;
+      background-color: white;
+      width: 700px;
+      text-align: center;
+      margin: 0 auto ;
+    }
+    th{
+      background-color: rgb(224, 236, 212);
+    }
+    a{
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background-color: rgb(206, 206, 206);
+      height: 25px;
+      line-height: 25px;
+      width: 90px;
+      border-radius: 5px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+    <div>
+      <h1>예약 리스트</h1>
+      <table id="reservation-table">
+        <tr>
+          <th>극장명</th>
+          <th>영화명</th>
+          <th>인원수</th>
+          <th>연령</th>
+          <th>영화시간</th>
+          <th>가격</th>
+        </tr>
+      </table>
+      <a href="reservation.html">예약화면</a>
+    </div>
+  </body>
+  <script>
+    function displayReservations() {
+      fetch('http://localhost:5000/api/reservations')
+      .then(response => response.json())
+      .then(data => {
+        const table = document.querySelector("#reservation-table")
+        data.forEach(reservation => {
+          const tr = document.createElement("tr")
+      tr.id = `reservation-${reservation.id}`;
+
+      const theater = document.createElement("td")
+      theater.textContent = reservation.theater
+      tr.appendChild(theater)
+
+      const movieName = document.createElement("td")
+      movieName.textContent = reservation.movieName
+      tr.appendChild(movieName)
+
+      const headCount = document.createElement("td")
+      headCount.textContent = `${reservation.headCount}명`
+      tr.appendChild(headCount)
+
+      const age = document.createElement("td")
+      age.textContent = reservation.age
+      tr.appendChild(age)
+
+      const movieTime = document.createElement("td")
+      movieTime.textContent = reservation.movieTime
+      tr.appendChild(movieTime)
+
+      const price = document.createElement("td")
+      price.textContent = `${reservation.price}원`
+      tr.appendChild(price)
+
+      // 테이블에 행 추가
+      table.appendChild(tr);
+    });
+  })
+  .catch(error => console.error('Error fetching reservations:', error))
+}
+
+// 페이지 로드 시 예약 목록을 표시
+displayReservations();
+</script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reservationList</title>
+  <style>
+    div{
+      width: 300px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgb(172, 189, 156);
+      padding: 20px;
+      background-color: rgb(241, 250, 233);
+    }
+    h1{
+      margin: 10px auto;
+      font-size: x-large;
+    }
+    input{
+      float: right;
+      width: 220px;
+      border: 1px solid rgb(205, 218, 187);
+      text-align: center;
+      height: 20px;
+    }
+    select{
+      float: right;
+      width: 225px;
+      border: 1px solid rgb(205, 218, 187);
+      height: 25px;
+    }
+    label{
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    option {
+      text-align: center;
+    }
+    button{
+      margin-top: 20px;
+      border-radius: 5px;
+      border: 1px solid rgb(181, 236, 98);
+      background-color: rgb(181, 236, 98);
+      height: 40px;
+      font-size: larger;
+      color: white;
+    }
+    p{
+      text-align: center;
+    }
+    a{
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background-color: rgb(206, 206, 206);
+      height: 25px;
+      line-height: 25px;
+      width: 90px;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+    
+  </style>
+</head>
+<body>
+  <div>
+    <h1>영화 예매</h1>
+    <label>
+      <span>극장</span>
+      <input type="text" id="theater">
+    </label>
+    <label>
+      <span>영화</span>
+      <input type="text" id="movie-name">
+    </label>
+    <label>
+      <span>인원수</span>
+      <input type="number" id="head-count">
+    </label>
+    <!-- 일반 청소년 2000원 -->
+    <label>
+      <span>구분</span>
+      <select name="age" id="age">
+        <option value="청소년">청소년</option>
+        <option value="성인">성인</option>
+      </select>
+    </label>
+    <label>
+      <span>관람시간</span>
+      <input type="time" id="movie-time">
+    </label>
+    <button>예매</button>
+    <p>💡결제금액 : 0원입니다.</p>
+    <a href="list.html">예약리스트</a>
+  </div>
+</body>
+  <script>
+    const addButton = document.querySelector("button")
+    addButton.addEventListener("click", ()=>{
+      const theater = document.querySelector("#theater").value
+      const movieName = document.querySelector("#movie-name").value
+      const headCount = document.querySelector("#head-count").value
+      const age = document.querySelector("#age").value
+      const movieTime = document.querySelector("#movie-time").value
+      const total = document.querySelector("p")
+
+      // p 데이터 넣기
+      const price = age =="청소년" ? 10000*headCount : 12000*headCount
+      total.textContent = `💡결제금액 : ${price}원 입니다`
+
+      // 목서버로 데이터 전송
+      const reservationData = {
+        theater : theater,
+        movieName : movieName,
+        headCount : headCount,
+        age : age,
+        movieTime : movieTime,
+        price : price
+      };
+
+      fetch('http://localhost:5000/api/reservations', {
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(reservationData)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success:', data);
+        alert('예매가 성공적으로 완료되었습니다')
+      })
+      .catch(error =>{
+        console.error('Error:', error);
+        alert('예매 중 오류가 발생했습니다')
+      });
+    });
+  </script>
+</html>
